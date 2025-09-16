@@ -1,0 +1,19 @@
+.splash-section {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(156, 183, 22) 0%, rgb(201, 117, 26) 100%);
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+small {
+  font-size: 10px;
+  color: black;
+}
