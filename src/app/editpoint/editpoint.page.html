@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/maps"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Point</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="edit-map" style="height: 60%; width: 100%;"></div>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Point Name</ion-label>
+      <ion-input [(ngModel)]="point.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Coordinates</ion-label>
+      <ion-text>{{ point.coordinates }}</ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="updatePoint()" [disabled]="!point.name">
+    Save Changes
+  </ion-button>
+</ion-content>

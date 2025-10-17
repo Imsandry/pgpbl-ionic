@@ -35,3 +35,94 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+.leaflet-material-icon {
+    background: transparent;
+    border: none;
+}
+
+/* Professional Popup Styles */
+.professional-popup-container .leaflet-popup-content-wrapper {
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.professional-popup-container .leaflet-popup-content {
+    margin: 0 !important;
+}
+
+.professional-popup {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    width: 220px;
+    background: var(--ion-color-step-50, #ffffff);
+    color: var(--ion-text-color, #000000);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+
+    .popup-header {
+        padding: 12px;
+        background: var(--ion-color-step-100, #f5f5f5);
+        color: var(--ion-color-primary);
+        text-align: center;
+        border-bottom: 1px solid var(--ion-color-step-200, #e0e0e0);
+        b {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+    }
+
+    .popup-body {
+        padding: 12px;
+        .coords {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            color: var(--ion-color-step-600, #666666);
+        }
+    }
+
+    .popup-footer {
+        display: flex;
+        
+        button {
+            flex: 1;
+            border: none;
+            background: var(--ion-color-step-150, #f0f0f0);
+            padding: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            border-top: 1px solid var(--ion-color-step-250, #dddddd);
+
+            &:first-child {
+                border-right: 1px solid var(--ion-color-step-250, #dddddd);
+            }
+
+            &.popup-edit-button {
+                color: var(--ion-color-primary);
+                &:hover {
+                    background-color: rgba(var(--ion-color-primary-rgb), 0.1);
+                }
+            }
+            &.popup-delete-button {
+                color: var(--ion-color-danger);
+                &:hover {
+                    background-color: rgba(var(--ion-color-danger-rgb), 0.1);
+                }
+            }
+        }
+    }
+}
+
+.professional-popup-container .leaflet-popup-tip-container {
+    display: none;
+}

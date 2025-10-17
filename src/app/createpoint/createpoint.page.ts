@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import * as L from 'leaflet';
-import { icon, Marker } from 'leaflet';
+import { materialIcon } from '../material-icon';
 
 @Component({
   selector: 'app-createpoint',
@@ -60,7 +60,7 @@ export class CreatepointPage {
       L.control.layers(baseMaps).addTo(this.map);
 
       var tooltip = 'Drag the marker or move the map<br>to change the coordinates<br>of the location';
-      var marker = L.marker([-7.7956, 110.3695], { draggable: true });
+      var marker = L.marker([-7.7956, 110.3695], { draggable: true, icon: materialIcon });
       marker.addTo(this.map);
       marker.bindPopup(tooltip);
       marker.openPopup();
@@ -83,17 +83,4 @@ export class CreatepointPage {
   private alertCtrl = inject(AlertController);
   private dataService = inject(DataService);
 }
-const iconRetinaUrl = 'assets/marker-icon-2x.png';
-const iconUrl = 'assets/marker-icon.png';
-const shadowUrl = 'assets/marker-shadow.png';
-const iconDefault = icon({
-  iconRetinaUrl,
-  iconUrl,
-  shadowUrl,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  tooltipAnchor: [16, -28],
-  shadowSize: [41, 41]
-});
-Marker.prototype.options.icon = iconDefault;
+

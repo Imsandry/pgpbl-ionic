@@ -25,5 +25,23 @@ getPoints() {
  });
 }
 
+// Delete a point
+deletePoint(key: string) {
+  const pointRef = ref(database, `points/${key}`);
+  return remove(pointRef);
+}
+
+// Get a single point by key
+getPointByKey(key: string) {
+  const pointRef = ref(database, `points/${key}`);
+  return get(pointRef);
+}
+
+// Update a point
+updatePoint(key: string, data: { name: string, coordinates: string }) {
+  const pointRef = ref(database, `points/${key}`);
+  return update(pointRef, data);
+}
+
 
 }
